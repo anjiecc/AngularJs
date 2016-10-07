@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<script type="text/javascript" src="./js/angular-ui-router.min.js"></script>
+</head>
+<body ng-controller="mainCtr">
+	<div class="warp">
+		<div class="header">
+			<div class="user"></div>
+			<div class="nav">
+				<ul>
+					<li><a href="#">要闻</a></li>
+					<li><a href="#">视频</a></li>
+					<li><a href="#">四川</a></li>
+					<li><a href="#">财经</a></li>
+					<li><a href="#">娱乐</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr/>
+		<div class="search">
+			<input type="text" placeholder="新闻搜索" id="searchIpt" ng-model="ipt">
+		</div>
+		<div class="bar">
+			
+		</div>
+		<div class="content">
+			<ul>
+				<li ng-repeat="list in newslist" ng-click="show(list.url)">
+					<div class="content-image">
+						<img src="{{list.picUrl}}">
+					</div>
+					<div class="content-text">
+						<h1>{{list.title}}</h1>
+						<p>{{list.ctime}}</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="footer">
+			<span class="news">新闻</span>
+			<span class="about">关心</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./js/auto-size.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</html>
